@@ -249,6 +249,15 @@ client.on('ready', () => {
   console.log(`✅ Logged in as ${client.user.tag}`);
   console.log(`✅ Owner Code Gen: ${DB.getPrefix('')}gencode`);
   console.log(`✅ Credits to WIKO — Online!`);
+
+  // SET BOT STATUS & ACTIVITY
+  client.user.setPresence({
+    status: 'idle',        // 'online' | 'idle' | 'dnd' | 'invisible'
+    activities: [{
+      name: 'type !help to see commands',
+      type: 3               // 0=Playing, 1=Streaming, 2=Listening, 3=Watching
+    }]
+  });
 });
 
 client.login(config.token);
